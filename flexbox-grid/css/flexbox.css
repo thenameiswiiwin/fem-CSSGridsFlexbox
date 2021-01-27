@@ -34,12 +34,14 @@ div img {
 .row {
 	display: flex;
 	flex-flow: row wrap;
+	flex: 0 1 auto;
 }
 [class*='col-'] {
+	flex: 0 1 92%;
 	margin-left: 4%;
-	flex: 0 0 92%;
 }
 .col-1-2,
+.col-1-2-1,
 .col-1-4 {
 	background-color: #ffc;
 }
@@ -52,10 +54,15 @@ div img {
 .col-4 {
 	background-color: #cff;
 }
+.col-2-1 {
+	background: cyan;
+}
 
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px) {
 	.col-1-2,
+	.col-1-2-1,
+	.col-2-1,
 	.col-2 {
 		flex: 0 0 44%;
 	}
@@ -64,14 +71,22 @@ div img {
 	col-4 {
 		flex: 0 0 92%;
 	}
+
+	.col-2-1 {
+		order: -1;
+		background-color: cyan;
+		flex: 0 0 92%;
+	}
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
 	.col-1-2,
-	.col-1-4 {
+	.col-1-4,
+	.col-1-2-1 {
 		flex: 0 0 20%;
 	}
-	.col-2 {
+	.col-2,
+	.col-2-1 {
 		flex: 0 0 44%;
 	}
 	.col-3 {
@@ -79,5 +94,10 @@ div img {
 	}
 	.col-4 {
 		flex: 0 0 92%;
+	}
+
+	.col-2-1 {
+		background-color: cyan;
+		order: 0;
 	}
 }
